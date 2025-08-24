@@ -1,72 +1,74 @@
-# google-forms-para-discord
+# Google Forms para Discord Webhook
 
-Este script permite que respostas de um **Google Forms** sejam automaticamente enviadas para um canal do **Discord** usando um webhook.
+Este repositório contém um script em Google Apps Script que envia respostas de um Google Form para um canal do Discord, utilizando um webhook.
 
 ---
 
-## 🚀 Configuração Básica
+## Configurações Básicas
 
-### 1. Criar Formulário
-- Crie um **Google Formulário** com as perguntas que quiser.
-- Exemplo de perguntas:
+### 1. Criar o Formulário
+- Crie um formulário no Google Forms com as perguntas que desejar.
+- Exemplos de perguntas comuns:
   - Nome completo
   - Nickname
   - Idade
-  - Discord:
+  - Discord
   - Email
 
 ### 2. Abrir o Editor de Script
-- No Google Forms, clique em **Mais (⋮) > Script editor**.
-- Apague tudo e cole o conteúdo de `google-script.js`.
+- No Google Forms, clique em **Mais (⋮) > Apps Script**.
+- Apague o conteúdo existente e cole o conteúdo do arquivo `google-script.js`.
 
 ### 3. Configurar o Webhook do Discord
-- Vá no canal do Discord onde deseja receber as respostas.
-- Clique em **Configurações do canal > Integrações > Webhooks**.
-- Crie um novo webhook e copie a **URL**.
-- No código, substitua:
-
+- No Discord, escolha o canal onde as respostas devem ser enviadas.
+- Vá em **Configurações do canal > Integrações > Webhooks**.
+- Crie um novo webhook e copie a URL.
+- Substitua no código:
 ```js
 const POST_URL = "WEBHOOK_URL_AQUI";
 ```
 
 ### 4. Pegar o ID do Formulário
-- Abra seu formulário no editor.
-- O ID estará na URL, entre `/d/` e `/edit`.
+- Abra o formulário no modo de edição.
+- O ID aparece na URL, entre `/d/` e `/edit`.
 - Exemplo:
   ```
-  https://docs.google.com/forms/d/1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890/edit
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^
-                                Este é o FORM_ID
+  https://docs.google.com/forms/d/**1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890**/edit
   ```
-- No código, substitua:
+  
+  > O que está em negrito pe o FORM_ID!
 
+- Substitua no código:
 ```js
 const FORM_ID = "FORM_ID_AQUI";
 ```
 
-### 5. Criar Trigger
-- No editor de script, vá em **Editar > Current project's triggers**.
-- Crie um trigger com as opções:
+### 5. Criar o Trigger
+- No editor de script, vá em **Editar > Acionadores do projeto atual**.
+- Adicione um novo acionador:
   - Função: `onSubmit`
-  - Evento: `On form submit`
+  - Evento: Ao enviar formulário
 
 ### 6. Testar
-- Envie uma resposta de teste no formulário.
-- Veja se a mensagem aparece no Discord.
+- Envie uma resposta de teste.
+- Verifique se a mensagem chegou no canal do Discord.
 
 ---
 
-## 🎨 Opções Extras (Customizações)
+## Customizações Opcionais
+
+É possível alterar o formato da mensagem enviada para o Discord.
 
 ### Cor
+A cor precisa ser um número decimal (não hexadecimal).
 ```json
-"color": 16711680 // Vermelho
+"color": 16711680 (Vermelho)
 ```
 
 ### Autor
 ```json
 "author": {
-  "name": "Google Forms Bot",
+  "name": "Nome do Bot",
   "url": "https://forms.google.com",
   "icon_url": "https://link-do-icone.png"
 }
@@ -79,7 +81,7 @@ const FORM_ID = "FORM_ID_AQUI";
 
 ### Descrição
 ```json
-"description": "Novo formulário enviado!"
+"description": "Novo formulário enviado"
 ```
 
 ### Imagem
@@ -92,22 +94,22 @@ const FORM_ID = "FORM_ID_AQUI";
 "thumbnail": { "url": "https://link-do-thumbnail.png" }
 ```
 
-### Footer com ícone
+### Rodapé com ícone
 ```json
 "footer": {
-  "text": "Google Forms → Discord",
+  "text": "Google Forms para Discord",
   "icon_url": "https://link-do-icone.png"
 }
 ```
 
 ---
 
-## 📌 Observações
-- O Google Apps Script pode exigir permissões extras na primeira execução.
-- Certifique-se de que seu formulário permite **coletar e-mails** se quiser o campo automático de e-mail.
-- O Discord tem limite de **6000 caracteres por mensagem**. Se seu formulário for muito longo, pode precisar resumir.
+## Observações Importantes
+- O Google Apps Script pode solicitar permissões na primeira execução.
+- Se o formulário estiver configurado para coletar e-mails, esses dados também podem ser enviados para o Discord.
+- O Discord tem limite de 6000 caracteres por mensagem. Caso seu formulário seja muito longo, pode ser necessário resumir as informações.
 
 ---
 
-## 📜 Licença
-MIT – Use, modifique e compartilhe livremente.
+## Licença
+Este projeto utiliza a licença MIT. Você pode usar, modificar e compartilhar livremente.
