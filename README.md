@@ -1,8 +1,6 @@
-# Google Forms para Discord Webhook
+# Google Forms para Discord
 
 Este repositório contém um script em Google Apps Script que envia respostas de um Google Form para um canal do Discord, utilizando um webhook.
-
----
 
 ## Configurações Básicas
 
@@ -36,7 +34,7 @@ const POST_URL = "WEBHOOK_URL_AQUI";
   https://docs.google.com/forms/d/1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890/edit
   ```
   
-  > Essa parte "1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890" é o FORM_ID!
+  > Essa parte "1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890" é o FORM_ID.
 
 - Substitua no código:
 ```js
@@ -60,10 +58,11 @@ const FORM_ID = "FORM_ID_AQUI";
 É possível alterar o formato da mensagem enviada para o Discord.
 
 ### Cor
-A cor precisa ser um número decimal (não hexadecimal).
 ```json
 "color": 16711680 (Vermelho)
 ```
+
+> A cor precisa ser um número decimal (não hexadecimal).
 
 ### Autor
 ```json
@@ -102,14 +101,10 @@ A cor precisa ser um número decimal (não hexadecimal).
 }
 ```
 
----
-
 ## Observações Importantes
 - O Google Apps Script pode solicitar permissões na primeira execução.
 - Se o formulário estiver configurado para coletar e-mails, esses dados também podem ser enviados para o Discord.
 - O Discord tem limite de 6000 caracteres por mensagem. Caso seu formulário seja muito longo, pode ser necessário resumir as informações.
-
----
 
 ## Licença
 Este projeto utiliza a licença MIT. Você pode usar, modificar e compartilhar livremente.
