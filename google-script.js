@@ -1,4 +1,3 @@
-// 🚨 CONFIGURAÇÕES INICIAIS
 // Substitua com o Webhook do Discord (criado no canal desejado)
 const POST_URL = "WEBHOOK_URL_AQUI";
 
@@ -58,12 +57,12 @@ function onSubmit(e) {
     },
     "payload": JSON.stringify({
       "embeds": [{
-        "title": `📩 Nova inscrição recebida! (Formulário #${count})`,
-        "color": 3447003, // Azul (pode mudar no README)
-        "description": `Um novo formulário foi enviado. Este é o **#${count}** na lista de envios.\n\u200B`,
+        "title": `Nova resposta recebida! (#${count})`,
+        "color": 3447003,
+        "description": `Uma nova resposta foi enviada. Esta é a **#${count}** na lista de envios.\n\u200B`,
         "fields": items,
         "footer": {
-          "text": "Google Forms → Discord"
+          "text": "Google Forms para Discord"
         },
         "timestamp": new Date().toISOString()
       }]
