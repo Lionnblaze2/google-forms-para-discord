@@ -33,10 +33,10 @@ const POST_URL = "WEBHOOK_URL_AQUI";
 - O ID aparece na URL, entre `/d/` e `/edit`.
 - Exemplo:
   ```
-  https://docs.google.com/forms/d/**1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890**/edit
+  https://docs.google.com/forms/d/1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890/edit
   ```
   
-  > O que está em negrito pe o FORM_ID!
+  > Essa parte "1AbCDeFGhijkLmnOPqRSTuvWxYz1234567890" é o FORM_ID!
 
 - Substitua no código:
 ```js
