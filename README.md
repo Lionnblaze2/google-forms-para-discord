@@ -51,8 +51,6 @@ const FORM_ID = "FORM_ID_AQUI";
 - Envie uma resposta de teste.
 - Verifique se a mensagem chegou no canal do Discord.
 
----
-
 ## Customizações Opcionais
 
 É possível alterar o formato da mensagem enviada para o Discord.
