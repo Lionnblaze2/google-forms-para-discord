@@ -57,7 +57,7 @@ const FORM_ID = "FORM_ID_AQUI";
 
 ### Cor
 ```json
-"color": 16711680 (Vermelho)
+"color": 16711680
 ```
 
 > A cor precisa ser um número decimal (não hexadecimal).
