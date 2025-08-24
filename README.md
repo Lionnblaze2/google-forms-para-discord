@@ -1,7 +1,5 @@
 # google-forms-para-discord
 
-# Google Forms → Discord Webhook
-
 Este script permite que respostas de um **Google Forms** sejam automaticamente enviadas para um canal do **Discord** usando um webhook.
 
 ---
